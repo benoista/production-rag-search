@@ -1,7 +1,8 @@
+import chunk
 import datetime
 from pydantic import ValidationError
 import pytest
-from src.models.schema import Document
+from src.models.schema import Document, Chunk
 
 # Test if the document is created successfully
 def test_document_creation():
@@ -82,3 +83,14 @@ def test_different_hash_content():
         metadata={"author": "John Doe"},
     )
     assert document.content_hash != document2.content_hash
+
+# Test if the Chunk id is created
+def test_chunk_creation():
+    chunk = Chunk(
+        id="1",
+        content="Hello, world!",
+        document_id="1",
+        index = 1,
+        token_nbr=300,
+    )
+    assert chunk.id == "1::1"
