@@ -5,8 +5,11 @@ description = "Projet : Production Grade RAG search "
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "numpy>=2.5.2",
     "pydantic>=2.13.4",
+    "pypdf>=6.14.2",
     "pytest>=9.1.1",
+    "sentence-transformers>=6.0.0",
 ]
 
 [build-system]
