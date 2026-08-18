@@ -1,6 +1,8 @@
-from datetime import datetime
-from pydantic import BaseModel, Field
 import hashlib
+from datetime import datetime
+
+from pydantic import BaseModel, Field
+
 
 class Document(BaseModel):
     id: str
